@@ -11,8 +11,10 @@ const Login = ({navigation}) => {
     let canLogin = false;
     const userNameArray = ["Rishi"]
     function functionName(){
-        if(userNameArray.indexOf(userName) != -1)
+        if(userNameArray.indexOf(userName) != -1){
             console.log("True")
+            navigation.navigate("Home")
+        }
         console.log("False")
     }
     return (
