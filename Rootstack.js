@@ -6,10 +6,34 @@ import Login from "./Screens/Login_Screen";
 const Stack = createNativeStackNavigator();
 
 const RootStack = () => {
-    <NavigationContainer>
-        <Stack.Navigator>
-            <Stack.Screen name="Login" component={Login} />
-        </Stack.Navigator>
-    </NavigationContainer>
+    return (
+        <NavigationContainer>
+            <Stack.Navigator
+                screenOptions={{
+                    headerStyle: {
+                        backgroundColor: 'transparent',
+                        title: "",
+                    },
+                    headerTintColor: 'transparent',
+                    headerTransparent: true,
+                    headerTitle:'',
+                    headerTitleStyle: {
+                        fontWeight: '800',
+                        fontSize: 26,
+                        color: 'transparent',
+                        marginTop: 5,
+                        marginLeft: "5%",
+                        marginBottom: 30
+                    },
+                    headerLeftContainerStyle: {
+                        paddingLeft: 20,
+                        paddingTop: 20
+                    },
+                }}
+                initialRouteName="Login">
+                <Stack.Screen name="Login" component={Login}/>
+            </Stack.Navigator>
+        </NavigationContainer>
+    );
 }
 export default RootStack;
