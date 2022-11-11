@@ -5,7 +5,7 @@ import Username_Icon from "../assets/Username_Icon.png";
 import Password_Icon from "../assets/Password_Icon.png";
 import {StatusBar} from "expo-status-bar";
 
-const Login = () => {
+const Login = ({navigation}) => {
     const [userName, setUserName] = useState('Username');
     const [password, setPassword] = useState('Password');
     let canLogin = false;
