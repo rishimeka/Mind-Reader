@@ -30,20 +30,19 @@ export const styles = StyleSheet.create({
         color: 'white',
         fontWeight: "bold",
         fontSize: 32,
-        
     },
     add_header: {
         color: 'black',
         fontWeight: "bold",
         fontSize: 20,
-        
-        
+
+
     },
     addsubheader_text: {
         color: 'black',
         fontWeight: "normal",
         fontSize: 16,
-          
+
     },
     home_header: {
         color: 'white',
@@ -60,7 +59,7 @@ export const styles = StyleSheet.create({
         backgroundColor: "#B084CC",
         //justifyContent: "left",
         //alignItems: "center"
-        
+
     },
     subheader_text: {
         color: 'white',
@@ -82,7 +81,7 @@ export const styles = StyleSheet.create({
         marginTop: 20,
         borderRadius: 15,
         flexDirection: "row",
-         
+
     },
     text_input_text:{
         color: 'black',
@@ -135,6 +134,138 @@ export const styles = StyleSheet.create({
         fontWeight: "normal",
         fontSize: 16,
         textDecorationLine: "underline",
-    }
+    },
+    safe_view_container_monthly_goals: {
+        flex: 1,
+        backgroundColor: '#1A181B',
+        alignItems: 'flex-start', // Vertical Alignment
+        justifyContent: 'flex-start', // Horizontal Alignment
+    },
+    header_text_monthly_goals: {
+        color: 'white',
+        fontWeight: "bold",
+        fontSize: 32,
+        marginLeft: 30,
+        alignSelf: "center"
+    },
+    monthly_goals_list_view: {
+        backgroundColor: "#252525",
+        alignItems: 'center', // Vertical Alignment
+        justifyContent: 'center', // Horizontal Alignment
+        width: Dimensions.get("screen").width*0.9,
+        padding: 20,
+        margin: 20,
+        alignSelf: "center",
+        borderRadius: 15
+    },
+    monthly_goals_view:{
+        backgroundColor: "#B084CC",
+        width: Dimensions.get("screen").width*0.75,
+        margin: 20,
+        borderRadius: 15,
+        height: 60,
+        justifyContent: "center",
+    },
+    monthly_goal_text:{
+        fontWeight: "700",
+        fontSize: 22,
+        color: "white",
+        marginLeft: 20,
+    },
+    add_goal_button:{
+        width: Dimensions.get("screen").width*0.8,
+        height: 65,
+        marginTop: 20,
+        borderRadius: 15,
+        backgroundColor: "#74A57F",
+        justifyContent: "center",
+        alignItems: "center",
+        alignSelf: "center",
+    },
+    calendar_button:{
+        width: Dimensions.get("screen").width*0.8,
+        height: 65,
+        marginTop: 20,
+        borderRadius: 15,
+        backgroundColor: "#05668D",
+        justifyContent: "center",
+        alignItems: "center",
+        alignSelf: "center",
+    },
+    add_goal:{
+        backgroundColor: "white",
+        maxWidth: Dimensions.get("screen").width*0.9,
+        flex: 1,
+        borderRadius: 20
+    },
+    header_text_add_monthly_goals: {
+        color: 'black',
+        fontWeight: "bold",
+        fontSize: 24,
+        marginLeft: 30,
+        marginTop: 30,
+    },
+    add_goal_text_box_header:{
+        color: 'black',
+        fontWeight: "500",
+        fontSize: 20,
+        marginLeft: 30,
+        marginTop: 15,
+        marginBottom: 10,
+    },
+    add_goal_text_input: {
+        borderColor: "black",
+        borderRadius: 15,
+        borderWidth: 1.2,
+        width: Dimensions.get("screen").width*0.80,
+        height: 50,
+        alignSelf: "center",
+        paddingLeft: 20,
+    },
+    add_goal_text_input_description: {
+        borderColor: "black",
+        borderRadius: 15,
+        borderWidth: 1.2,
+        width: Dimensions.get("screen").width*0.80,
+        height: 150,
+        alignSelf: "center",
+        paddingTop: 20,
+        marginBottom: 20,
+        paddingLeft: 20
+    },
+    header_text_add_monthly_goals_with_close_button:{
+        flexDirection: "row",
+    },
+    close_button: {
+        marginLeft: 75
+    },
+    checkbox: {
+        marginLeft: 30,
+        marginTop: 1.5,
+        borderColor: "black"
+    },
+    text_with_checkbox:{
+        flexDirection: "row",
+    },
+    checkbox_text: {
+        color: 'black',
+        fontWeight: "500",
+        fontSize: 20,
+        marginLeft: 10,
+        marginBottom: 10,
+    },
+    add_goal_button_goal_creation:{
+        width: Dimensions.get("screen").width*0.5,
+        height: 60,
+        marginTop: 20,
+        borderRadius: 15,
+        backgroundColor: "#B084CC",
+        justifyContent: "center",
+        alignItems: "center",
+        alignSelf: "center",
+        marginBottom: 30,
+    },
+
+
 
 });
