@@ -13,10 +13,54 @@ export const styles = StyleSheet.create({
         justifyContent: "center",
         //alignItems: "center"
     },
+    home_container: {
+        width: Dimensions.get("screen").width*0.8,
+        justifyContent: "center",
+        //alignItems: "center"
+    },
+    goal_container: {
+        width: Dimensions.get("screen").width*0.8,
+        height:  Dimensions.get("screen").height*0.5,
+        borderRadius: 15,
+        backgroundColor: '#FFFFFF',
+        justifyContent: "center",
+        //alignItems: "center"
+    },
     header_text: {
         color: 'white',
         fontWeight: "bold",
         fontSize: 32,
+        
+    },
+    add_header: {
+        color: 'black',
+        fontWeight: "bold",
+        fontSize: 20,
+        
+        
+    },
+    addsubheader_text: {
+        color: 'black',
+        fontWeight: "normal",
+        fontSize: 16,
+          
+    },
+    home_header: {
+        color: 'white',
+        fontWeight: "bold",
+        fontSize: 32,
+        justifyContent: "top-center",
+    },
+    add_button: {
+        //width: Dimensions.get("screen").width*0.8,
+        height: 30,
+        marginTop: -400,
+        borderRadius: 15,
+        alignSelf: "left",
+        backgroundColor: "#B084CC",
+        //justifyContent: "left",
+        //alignItems: "center"
+        
     },
     subheader_text: {
         color: 'white',
@@ -30,6 +74,15 @@ export const styles = StyleSheet.create({
         marginTop: 20,
         borderRadius: 15,
         flexDirection: "row",
+    },
+    addtext_input_box: {
+        backgroundColor: 'gray',
+        width: Dimensions.get("screen").width*0.8,
+        height: 65,
+        marginTop: 20,
+        borderRadius: 15,
+        flexDirection: "row",
+         
     },
     text_input_text:{
         color: 'black',

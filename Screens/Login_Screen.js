@@ -9,11 +9,17 @@ const Login = ({navigation}) => {
     const [userName, setUserName] = useState('Username');
     const [password, setPassword] = useState('Password');
     let canLogin = false;
-    const userNameArray = ["Rishi"]
+
+    const UserPassMap = new Map();
+    UserPassMap.set("Rishi", "rishi123");
+    UserPassMap.set("Daniel", "daniel23");
+    UserPassMap.set("Robert", "rob123");
+    UserPassMap.set("Namrata", "namrata123");
+
     function functionName(){
-        if(userNameArray.indexOf(userName) != -1){
+        if(UserPassMap.get(userName) == password){
             console.log("True")
-            navigation.navigate("Home")
+            navigation.navigate("MonthlyGoals")
         }
         console.log("False")
     }
