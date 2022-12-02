@@ -6,8 +6,11 @@ import Close from "../assets/Close.png"
 import Username_Icon from "../assets/Username_Icon.png";
 import Checkbox from "expo-checkbox";
 import ExpoCheckbox from "expo-checkbox";
+import { AntDesign } from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
+import {StackActions} from "@react-navigation/native";
 
-const AddMonthlyGoal = () => {
+const AddMonthlyGoal = ({navigation}) => {
     const [monthlyGoalName, setMonthlyGoalName] = useState()
     const [monthlyGoalDeadLine, setMonthlyGoalDeadLine] = useState()
     const [goalDescription, setGoalDescription] = useState()
@@ -20,7 +23,10 @@ const AddMonthlyGoal = () => {
            <View style={styles.add_goal}>
                <View style={styles.header_text_add_monthly_goals_with_close_button}>
                    <Text style={styles.header_text_add_monthly_goals}>Add Monthly Goal</Text>
-                   <Pressable style={styles.close_button}><Text style={styles.header_text_add_monthly_goals}>X</Text></Pressable>
+                   <Pressable style={styles.close_button}
+                   onPress={() => navigation.dispatch(
+                       StackActions.popToTop()
+                   )}><Ionicons name="close" size={30} color="black" /></Pressable>
                </View>
                <Text style={styles.add_goal_text_box_header}>Goal Name</Text>
                <TextInput

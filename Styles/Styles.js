@@ -150,10 +150,11 @@ export const styles = StyleSheet.create({
     },
     monthly_goals_list_view: {
         backgroundColor: "#252525",
-        alignItems: 'center', // Vertical Alignment
+        alignItems: 'flex-start', // Vertical Alignment
         justifyContent: 'center', // Horizontal Alignment
         width: Dimensions.get("screen").width*0.9,
-        padding: 20,
+        height: Dimensions.get("screen").height*0.55,
+        //padding: 20,
         margin: 20,
         alignSelf: "center",
         borderRadius: 15
@@ -237,7 +238,8 @@ export const styles = StyleSheet.create({
         flexDirection: "row",
     },
     close_button: {
-        marginLeft: 75
+        justifyContent: "flex-end",
+        marginLeft: 100,
     },
     checkbox: {
         marginLeft: 30,
@@ -264,8 +266,16 @@ export const styles = StyleSheet.create({
         alignItems: "center",
         alignSelf: "center",
         marginBottom: 30,
-    },
-
+    }, text_input_box_with_error: {
+        borderColor: 'red',
+        borderWidth: 2,
+        backgroundColor: 'white',
+        width: Dimensions.get("screen").width*0.8,
+        height: 65,
+        marginTop: 20,
+        borderRadius: 15,
+        flexDirection: "row",
+    }
 
 
 });
