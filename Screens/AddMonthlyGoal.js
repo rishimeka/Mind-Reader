@@ -38,7 +38,7 @@ const AddMonthlyGoal = ({navigation}) => {
         <SafeAreaView style={styles.safe_view_container}>
            <View style={styles.add_goal}>
                <View style={styles.header_text_add_monthly_goals_with_close_button}>
-                   <Text style={styles.header_text_add_monthly_goals}>Add Monthly Goal</Text>
+                   <Text style={styles.header_text_add_monthly_goals}>Add Goal</Text>
                    <Pressable style={styles.close_button}
                    onPress={() => navigation.dispatch(
                        StackActions.popToTop()

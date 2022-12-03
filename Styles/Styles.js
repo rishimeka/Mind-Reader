@@ -239,7 +239,7 @@ export const styles = StyleSheet.create({
     },
     close_button: {
         justifyContent: "flex-end",
-        marginLeft: 100,
+        marginLeft: 200,
     },
     checkbox: {
         marginLeft: 30,
