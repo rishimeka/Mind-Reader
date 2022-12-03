@@ -275,6 +275,21 @@ export const styles = StyleSheet.create({
         marginTop: 20,
         borderRadius: 15,
         flexDirection: "row",
+    },
+    buttonRow:{
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-evenly",
+        //alignSelf: "center"
+    },
+    trashButton:{
+        alignSelf: "center",
+        backgroundColor: '#FE5F55',
+        padding: 5,
+        borderRadius: 50,
+        justifyContent: "center",
+        marginBottom: 15,
+        marginRight: 10
     }
 
 

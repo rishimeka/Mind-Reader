@@ -1,62 +1,33 @@
 export let userData = {
     user1:{
         userid: 0,
-        fullName: "Rishi Meka",
-        email: "rishi@gmail.com",
-        password: "validPassword@1",
-        events: [
+        fullName: "Testing User",
+        email: "Test@validemail.com",
+        password: "password",
+        events: {
 
-        ],
-        goals: [
-            "Pay all bills on time",
-            "Complete home project",
-            "Paint room",
-            "Workout Everyday"
-        ],
+        },
+        goals: {
+            goal1: {
+                goalId: 0,
+                goalName: "Pay all bills on time",
+                goalDescription: "Pay all my bills on time!!!",
+                goalDeadLine: "1:30PM"
+            },
+            goal2: {
+                goalId: 1,
+                goalName: "Complete home project",
+                goalDescription: "Finish working on the designs for the home project and work on the project",
+                goalDeadLine: "5:30PM"
+            },
+            goal3: {
+                goalId: 2,
+                goalName: "Paint room",
+                goalDescription: "Pick up the paint from home depot",
+                goalDeadLine: "9:00AM"
+            },
+        },
     },
-    user2:{
-        userid: 1,
-        fullName: "Namrata Veeramalla",
-        email: "namratav@gmail.com",
-        password: "validPassword@2",
-        events: [
-
-        ],
-        goals: [
-            "Finish Project Presentation",
-            "Work on OS Project Code",
-        ],
-    },
-    user3:{
-        userid: 2,
-        fullName: "Robert Dohm",
-        email: "robert@gmail.com",
-        password: "validPassword@3",
-        events: [
-
-        ],
-        goals: [
-            "Pay all bills on time",
-            "Complete home project",
-            "Paint room",
-            "Workout Everyday",
-            "Read 100 Pages",
-            "Finish Unix Assignment",
-            "Prepare for Interview",
-        ],
-    },
-    user4:{
-        userid: 3,
-        fullName: "Daniel Agu",
-        email: "Daniel@gmail.com",
-        password: "validPassword@4",
-        events: [
-
-        ],
-        goals: [
-
-        ],
-    }
 }
 export function getNumUsers(){
     let numUsers = 0;
@@ -79,11 +50,66 @@ export function checkUsername_password(userName, password){
 export function addToUserData(user){
     userData[user.userid] = user;
 }
-export function getGoals(userId){
+export let goalId;
+export function getGoal(goalId, userId){
+    let userGoals = getGoals(userId);
+    for(const goal in userGoals){
+        let currGoal = userGoals[goal];
+        if(currGoal.goalId === goalId)
+            return currGoal
+    }
+}
+export function editGoal(goalId, userId, newGoalName, newGoalDeadline, newGoalDescription){
     for(const user in userData){
         let currUser = userData[user];
         if(currUser.userid == userId){
-            return currUser.goals;
+            for(const goal in userData[user].goals){
+                if(userData[user].goals[goal].goalId == goalId){
+                    userData[user].goals[goal].goalName = newGoalName;
+                    userData[user].goals[goal].goalDescription = newGoalDescription;
+                    userData[user].goals[goal].goalDeadLine = newGoalDeadline;
+                    return;
+                }
+            }
+        }
+    }
+}
+export function deleteGoal(goalId, userId){
+    for(const user in userData){
+        let currUser = userData[user];
+        if(currUser.userid == userId){
+            for(const goal in userData[user].goals){
+                if(userData[user].goals[goal].goalId == goalId){
+                    delete userData[user].goals[goal];
+                    goalId --;
+                    return;
+                }
+            }
+        }
+    }
+}
+export function getGoals(userId){
+    let goals = [];
+    let currUser;
+    let currUserGoalList;
+    for(const user in userData){
+        currUser = userData[user];
+        if(currUser.userid == userId){
+            currUserGoalList = currUser.goals;
+        }
+    }
+    goalId = 0;
+    for(const goal in currUserGoalList){
+        goals[goalId] = currUserGoalList[goal].goalName;
+        goalId++;
+    }
+    return currUser.goals;
+}
+export function addGoal(userId, goal){
+    for(const user in userData){
+        let currUser = userData[user];
+        if(currUser.userid == userId){
+            userData[user].goals[goalId] = goal;
         }
     }
 }

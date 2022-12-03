@@ -19,12 +19,12 @@ const SignUp = ({navigation}) => {
                     fullName: fullName,
                     email: userName,
                     password: password,
-                    events: [
+                    events: {
 
-                ],
-                    goals: [
+                    },
+                    goals: {
 
-                ],
+                    },
             }
             addToUserData(user);
             navigation.dispatch(

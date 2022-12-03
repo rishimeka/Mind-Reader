@@ -5,6 +5,7 @@ import Login from "./Screens/Login_Screen";
 import MonthlyGoals from "./Screens/MonthlyGoals";
 import AddMonthlyGoal from "./Screens/AddMonthlyGoal";
 import SignUp from "./Screens/Signup";
+import EditMonthlyGoal from "./Screens/EditMonthlyGoal";
 const Stack = createNativeStackNavigator();
 
 const RootStack = () => {
@@ -37,6 +38,8 @@ const RootStack = () => {
                 <Stack.Screen name="SignUp" component={SignUp}/>
                 <Stack.Screen name="MonthlyGoals" component={MonthlyGoals}/>
                 <Stack.Screen name="AddMonthlyGoal" component={AddMonthlyGoal}/>
+                <Stack.Screen name="EditMonthlyGoal" component={EditMonthlyGoal}/>
+
             </Stack.Navigator>
         </NavigationContainer>
     );

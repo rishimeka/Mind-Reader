@@ -9,15 +9,31 @@ import ExpoCheckbox from "expo-checkbox";
 import { AntDesign } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import {StackActions} from "@react-navigation/native";
+import {addGoal, getGoals, goalId, userData} from "./User";
+import {currUser} from "./Login_Screen";
+import {setListOfGoals} from "./MonthlyGoals"
 
 const AddMonthlyGoal = ({navigation}) => {
     const [monthlyGoalName, setMonthlyGoalName] = useState()
-    const [monthlyGoalDeadLine, setMonthlyGoalDeadLine] = useState()
+    const [goalDeadline, setGoalDeadline] = useState()
     const [goalDescription, setGoalDescription] = useState()
     const createTwoButtonAlert = () =>
-        Alert.alert('Monthly Goal Created Successfully', monthlyGoalName + ' has been added to your monthly goals set for ' + monthlyGoalDeadLine + '!' , [
-            { text: 'OK', onPress: () => console.log('OK Pressed') },
+        Alert.alert('Monthly Goal Created Successfully', monthlyGoalName + ' has been added to your monthly goals set for ' + goalDeadline + '!' , [
+            { text: 'OK', onPress: () => nav()},
         ]);
+    function nav(){
+        let goal = {
+            goalId: goalId,
+            goalName: monthlyGoalName,
+            goalDescription: goalDescription,
+            goalDeadLine: goalDeadline
+        }
+        addGoal(currUser, goal)
+        setListOfGoals()
+        navigation.dispatch(
+            StackActions.replace("MonthlyGoals")
+        )
+    }
     return (
         <SafeAreaView style={styles.safe_view_container}>
            <View style={styles.add_goal}>
@@ -36,8 +52,9 @@ const AddMonthlyGoal = ({navigation}) => {
                <Text style={styles.add_goal_text_box_header}>Goal Deadline</Text>
                <TextInput
                    style={styles.add_goal_text_input}
+                   keyboardType={"numbers-and-punctuation"}
                    placeholder={"Goal Deadline"}
-                   onChangeText={(userInputValue) => setMonthlyGoalDeadLine(userInputValue)}/>
+                   onChangeText={(userInputValue) => setGoalDeadline(userInputValue)}/>
                <Text style={styles.add_goal_text_box_header}>Goal Description</Text>
                <TextInput
                    style={styles.add_goal_text_input_description}
